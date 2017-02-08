@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block 'title' %}Publicaciones{%endblock%}
+{% block 'content'%}
+	{%comment%}
+	{{publicaciones.Nombre | lower}}
+	{{publicaciones.Edad | default:"No tiene"}}
+	{{publicaciones.Nombre | length}}
+	{%endcomment%}
+		{% for publicacion in publicaciones %}
+			{% for key,value in publicacion.items %}
+				{{key}}:{{value}}
+			<br>
+			{%endfor%}
+			<br>
+			<hr>
+		{%endfor%}
+
+
+{%endblock%}
