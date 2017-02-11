@@ -30,14 +30,26 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+
+
+DJANGO_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+
 ]
+
+APPLICATION_APPS = [
+    'modules.Publicaciones',
+    'modules.Home',
+]
+
+THIRD_APPLICATION = []
+
+INSTALLED_APPS = DJANGO_APPS + APPLICATION_APPS + THIRD_APPLICATION
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,3 +136,9 @@ STATICFILES_DIRS = [os.path.join(os.getcwd(),'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.getcwd(),'media')
+
+
+try:
+    from .local_settings import *
+except:
+    pass
