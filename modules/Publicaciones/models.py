@@ -1,6 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
-
+from modules.Usuarios.models import User
 
 TAGS = (
         ('TC','Tecnología'),
@@ -20,6 +19,7 @@ class Publicacion (models.Model):
     fecha  = models.DateField(auto_now_add=True)
     autor = models.ForeignKey(User,on_delete=models.CASCADE)
     tags = models.CharField(choices=TAGS,max_length=50)
+    imagen = models.ImageField(upload_to='Publicaciones/',null=True,blank=True)
 
 
     #pepe_publish = PepePublicacionesManager()

@@ -15,6 +15,7 @@
      {%if user.is_authenticated %}
      <span style="margin-left:50%;">Hola: {{user.username}}</span>
      <a href="#">Mi perfil</a>
+     <a href="{% url 'Publicaciones:index-publicacion'%}">Mis publicaciones</a>
       <a href="{% url 'Home:Logout'%}">Logout</a>
       {%else%}
      <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -30,5 +31,7 @@
 
   <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
   <script src="{% static 'js/materialize.min.js' %}"></script>
+  {%block 'scripts'%}
+  {%endblock%}
 </body>
 </html>

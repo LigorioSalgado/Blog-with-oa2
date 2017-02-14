@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('modules.Home.urls',namespace='Home',app_name='Home')),
-    url(r'^publicaciones/', include('modules.Publicaciones.urls'))
+    url(r'^publicaciones/', include('modules.Publicaciones.urls',
+    namespace='Publicaciones',app_name='Publicaciones'))
 
 ]
