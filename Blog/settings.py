@@ -48,7 +48,9 @@ APPLICATION_APPS = [
     'modules.Usuarios',
 ]
 
-THIRD_APPLICATION = []
+THIRD_APPLICATION = [
+'rest_framework',
+]
 
 INSTALLED_APPS = DJANGO_APPS + APPLICATION_APPS + THIRD_APPLICATION
 
@@ -139,6 +141,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.getcwd(),'media')
 
 AUTH_USER_MODEL = 'Usuarios.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
+
 
 try:
     from .local_settings import *

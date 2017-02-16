@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from django.conf import settings
+from .api_urls import urlpatterns as api_urls
 #from django.conf.urls.static import static
 
 
@@ -23,6 +24,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('modules.Home.urls',namespace='Home',app_name='Home')),
     url(r'^publicaciones/', include('modules.Publicaciones.urls',
-    namespace='Publicaciones',app_name='Publicaciones'))
+    namespace='Publicaciones',app_name='Publicaciones')),
+
+    #url de API
+
+    url(r'^api/v1/', include(api_urls)),
 
 ]
