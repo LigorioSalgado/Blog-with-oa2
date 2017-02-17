@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('password', models.CharField(max_length=128, verbose_name='password')),
                 ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
                 ('is_superuser', models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status')),
-                ('id_cliente', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('id_usuario', models.AutoField(primary_key=True, serialize=False, unique=True)),
                 ('nombre', models.CharField(max_length=40)),
                 ('apaterno', models.CharField(max_length=25)),
                 ('amaterno', models.CharField(max_length=25)),

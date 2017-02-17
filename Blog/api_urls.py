@@ -6,5 +6,6 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^users/', include('modules.Usuarios.urls_api')),
+    url(r'^publicaciones/', include('modules.Publicaciones.urls_api')),
     #TODO agregar publicaciones
 ]

@@ -17,7 +17,7 @@ class Publicacion (models.Model):
     nombre = models.CharField(max_length=80)
     contenido = models.TextField()
     fecha  = models.DateField(auto_now_add=True)
-    autor = models.ForeignKey(User,on_delete=models.CASCADE)
+    autor = models.ForeignKey(User,on_delete=models.CASCADE, related_name="publicaciones")
     tags = models.CharField(choices=TAGS,max_length=50)
     imagen = models.ImageField(upload_to='Publicaciones/',null=True,blank=True)
 
