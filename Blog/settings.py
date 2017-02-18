@@ -50,6 +50,7 @@ APPLICATION_APPS = [
 
 THIRD_APPLICATION = [
 'rest_framework',
+'oauth2_provider',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + APPLICATION_APPS + THIRD_APPLICATION
@@ -144,10 +145,17 @@ AUTH_USER_MODEL = 'Usuarios.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.IsAuthenticated'
+    ],
+     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'oauth2_provider.ext.rest_framework.OAuth2Authentication',
     ]
 }
 
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope'}
+}
 
 try:
     from .local_settings import *

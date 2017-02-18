@@ -7,5 +7,6 @@ from django.conf import settings
 urlpatterns = [
     url(r'^users/', include('modules.Usuarios.urls_api')),
     url(r'^publicaciones/', include('modules.Publicaciones.urls_api')),
+     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     #TODO agregar publicaciones
 ]
